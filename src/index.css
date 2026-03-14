@@ -1,0 +1,76 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: #0d0d0d;
+}
+
+::-webkit-scrollbar { width: 0; }
+
+input {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #e0dbd0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #c8c3b9;
+  width: 100%;
+}
+
+[contenteditable]:empty:before {
+  content: attr(data-placeholder);
+  color: #333;
+  pointer-events: none;
+  font-style: italic;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(28px); }
+}
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes popIn {
+  0%   { transform: scale(0.88); opacity: 0; }
+  70%  { transform: scale(1.02); }
+  100% { transform: scale(1);    opacity: 1; }
+}
+@keyframes sideIn {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes savedPulse {
+  0%   { opacity: 0; transform: translateY(4px); }
+  20%  { opacity: 1; transform: translateY(0); }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.fab:active { transform: scale(0.9) !important; }
+
+.sr { transition: background 0.12s; }
+.sr:hover { background: #161616 !important; }
